@@ -2,12 +2,13 @@
 const domContainer = document.querySelector("#inject_here");
 
 // create component -- with some state
-const SomeButton = () => {
+const SomeButton = (props) => {
+  console.log(props);
   // useState <- will have its own explanation in the next parts of the series
   const [state, setState] = React.useState({ liked: false });
 
   if (state.liked) {
-    return "Yay! Thanks you!";
+    return `Yay! Thanks you! ${props.pangalan}`;
   }
 
   return (
@@ -20,8 +21,8 @@ const SomeButton = () => {
 const SideBySideLayout = () => {
   return (
     <div>
-      <SomeButton></SomeButton>
-      <SomeButton></SomeButton>
+      <SomeButton pangalan={"john"}></SomeButton>
+      <SomeButton pangalan={"cena"}></SomeButton>
     </div>
   );
 };

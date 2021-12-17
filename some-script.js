@@ -17,5 +17,14 @@ const SomeButton = () => {
   );
 };
 
+const SideBySideLayout = () => {
+  return (
+    <div>
+      <SomeButton></SomeButton>
+      <SomeButton></SomeButton>
+    </div>
+  );
+};
+
 // render ze element
-ReactDOM.render(React.createElement(SomeButton), domContainer);
+ReactDOM.render(React.createElement(SideBySideLayout), domContainer);

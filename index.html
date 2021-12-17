@@ -25,13 +25,22 @@
       // use css selector i.e. #inject_here
       const domContainer = document.querySelector("#inject_here");
 
-      // create component
+      // create component -- with some state
       class SomeButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { liked: false };
+        }
+
         render() {
+          if (this.state.liked) {
+            return "Yay! Thanks you!";
+          }
+
           return React.createElement(
             "button",
-            {},
-            "Im a button from a React component"
+            { onClick: () => this.setState({ liked: true }) },
+            "Like me please."
           );
         }
       }

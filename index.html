@@ -29,23 +29,19 @@
       const domContainer = document.querySelector("#inject_here");
 
       // create component -- with some state
-      class SomeButton extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = { liked: false };
+      function SomeButton() {
+        // useState <- will have its own explanation in the next parts of the series
+        const [state, setState] = React.useState({ liked: false });
+
+        if (state.liked) {
+          return "Yay! Thanks you!";
         }
 
-        render() {
-          if (this.state.liked) {
-            return "Yay! Thanks you!";
-          }
-
-          return (
-            <button onClick={() => this.setState({ liked: true })}>
-              Like me please. (JSX)
-            </button>
-          );
-        }
+        return (
+          <button onClick={() => setState({ liked: true })}>
+            Like me please. (JSX) + function component
+          </button>
+        );
       }
 
       // render ze element

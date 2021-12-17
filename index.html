@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Add them scripts -->
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -17,11 +18,21 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- prep the place to put -->
     <div id="inject_here"></div>
+    <div id="another_place"></div>
 
     <script>
+      // use css selector i.e. #inject_here
       const domContainer = document.querySelector("#inject_here");
+
+      // render ze element
       ReactDOM.render(React.createElement("button", {}, "yow"), domContainer);
+
+      // render ze element
+      const domContainer2nd = document.querySelector("#another_place");
+      const someElement = React.createElement("p", {}, "hellow");
+      ReactDOM.render(someElement, domContainer2nd);
     </script>
   </body>
 </html>

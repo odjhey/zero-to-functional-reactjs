@@ -70,3 +70,4 @@ frameworks, meta or not, are tools that are opinionated (some very much so) on h
 - css stuff (tachyons, bulma, stitches, mantine)
 - tanstack (react-table, react-query) https://tanstack.com/
 - component libs (chakra, material, bootstrap, etc - a ton of these is around)
+- fetchers (react-query, swr)

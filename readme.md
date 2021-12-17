@@ -17,7 +17,7 @@ im no pro and i may have misunderstood some of the things presented. please call
 - why `setState` and not `state = newState`
 - render props/children/slot
 - https://reactjs.org/docs/thinking-in-react.html
-- lifecycles / hooks
+- lifecycles vs hooks
   - useState
 - context
   - useContext

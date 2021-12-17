@@ -8,7 +8,7 @@ const SomeButton = (props) => {
   const [state, setState] = React.useState({ liked: false });
 
   if (state.liked) {
-    return `Yay! Thanks you! ${props.pangalan}`;
+    return <p>{`Yay! Thanks you! ${props.pangalan}`}</p>;
   }
 
   return (
@@ -20,7 +20,7 @@ const SomeButton = (props) => {
 
 const SideBySideLayout = () => {
   return (
-    <div>
+    <div style={{ display: "flex", gap: "1rem" }}>
       <SomeButton pangalan={"john"}></SomeButton>
       <SomeButton pangalan={"cena"}></SomeButton>
     </div>

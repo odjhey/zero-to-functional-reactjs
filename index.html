@@ -20,19 +20,24 @@
   <body>
     <!-- prep the place to put -->
     <div id="inject_here"></div>
-    <div id="another_place"></div>
 
     <script>
       // use css selector i.e. #inject_here
       const domContainer = document.querySelector("#inject_here");
 
-      // render ze element
-      ReactDOM.render(React.createElement("button", {}, "yow"), domContainer);
+      // create component
+      class SomeButton extends React.Component {
+        render() {
+          return React.createElement(
+            "button",
+            {},
+            "Im a button from a React component"
+          );
+        }
+      }
 
       // render ze element
-      const domContainer2nd = document.querySelector("#another_place");
-      const someElement = React.createElement("p", {}, "hellow");
-      ReactDOM.render(someElement, domContainer2nd);
+      ReactDOM.render(React.createElement(SomeButton), domContainer);
     </script>
   </body>
 </html>

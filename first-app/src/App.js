@@ -1,19 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Layout from "./Layout";
-import Counter from "./components/Counter";
-import {
-  BlueComponent,
-  GreenComponent,
-  RedComponent,
-} from "./components/Components";
 import Pokemon from "./components/Pokemon";
+import AboutUs from "./pages/AboutUsPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Layout header={<h1>hello</h1>} footer={<h4>copyright</h4>}>
-      <Pokemon></Pokemon>
-    </Layout>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout header={<h1>hello</h1>} footer={<h4>copyright</h4>}>
+              <Pokemon></Pokemon>
+            </Layout>
+          }
+        />
+        <Route path="/about" element={<AboutUs></AboutUs>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

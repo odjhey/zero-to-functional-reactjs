@@ -25,6 +25,24 @@
       // use css selector i.e. #inject_here
       const domContainer = document.querySelector("#inject_here");
 
+      class Card extends React.Component {
+        render() {
+          return React.createElement(
+            "div",
+            { style: {border: "solid 1px red"}},
+            [this.props.children]
+          );
+        }
+      }
+
+      function AText(props) {
+        return React.createElement("p", {}, props.children);
+      }
+
+      function SomeLabel(props) {
+        return React.createElement("p", {}, "I am a label");
+      }
+
       // create component -- with some state
       class SomeButton extends React.Component {
         constructor(props) {
@@ -46,7 +64,11 @@
       }
 
       // render ze element
-      ReactDOM.render(React.createElement(SomeButton), domContainer);
+      ReactDOM.render(React.createElement(Card, {}, [
+        React.createElement(SomeButton, {key: "1"}),
+        React.createElement(AText, {key: "2"}, "Hello World"),
+        React.createElement(SomeLabel, {key: "3"}),
+      ]), domContainer);
     </script>
   </body>
 </html>
